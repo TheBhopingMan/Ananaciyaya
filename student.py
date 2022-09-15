@@ -10,28 +10,31 @@ class Student:
 
     def to_work(self):
         print("I wanna work")
-        self.money += 20
-        self.gladness -= 3
+        self.money += random.randint(5,50)
+        self.gladness -= random.randint(1,5)
 
     def to_study(self):
         print("Time to study")
-        self.progress += 0.12
-        self.gladness -= 3
+        self.progress += 0.17
+        self.gladness -= random.randint(1, 5)
 
     def to_sleep(self):
         print("I will sleep")
-        self.gladness += 3
+        self.gladness += random.randint(1, 7)
 
     def to_chill(self):
-        print("Vremya buhat`")
-        self.money -= 5
-        self.gladness += 5
+        print("Chiiiil")
+        self.money -= random.randint(1,10)
+        self.gladness += random.randint(1, 7)
         self.progress -= 0.1
 
 
     def problems(self):
-        if self.progress <= 0.70:
-            self.to_study()
+        if self.progress <= 0.70:          #study harder
+            print("Time to study")
+            self.progress += 0.20
+            self.gladness -= random.randint(1, 5)
+
         elif self.money <= 10:
             self.to_work()
         elif self.gladness <= 10:
